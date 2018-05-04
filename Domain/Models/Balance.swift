@@ -9,12 +9,14 @@
 import Foundation
 import Utils
 
-struct Balance {
-    let id: String
+public struct Balance {
+    public let id: String?
+    public let value: Double?
+    public let lis: Double?
 }
 
 extension Balance: Equatable {
-    static func ==(lhs: Balance, rhs: Balance) -> Bool {
+    public static func ==(lhs: Balance, rhs: Balance) -> Bool {
         return lhs.id == rhs.id
     }
 }

@@ -12,6 +12,6 @@ import Foundation
 
 class BalanceRepositorySuccessMock: BalanceRepository {
     func getBalance(completion: (Result<Balance>) -> ()) {
-        completion(.success(data: Balance(id: "teste")))
+        completion(.success(data: Balance(id: "teste", value: 123.0, lis: 123.0)))
     }
 }

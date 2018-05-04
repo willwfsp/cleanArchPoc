@@ -10,8 +10,5 @@ import Foundation
 import Utils
 
 protocol DataSource {
-    associatedtype T
-    associatedtype I
-    
-    func get(id: I, completion: (Result<T>) -> ())
+    func get(id: String, completion: (Result<JsonObject>) -> ())
 }

@@ -1,0 +1,17 @@
+{
+    "autenticacao": "12c23a321faasd56asd123asd",
+    "saldo" : 3000.0,
+    "lis" : 5120.0,
+    "dias_utilizados" : 5,
+    "ultima_atualizacao" : 1525458141000,
+    "data_vencimento" : 1525976541000,
+    "juros" : {
+        "juros_acumulado": 0.11,
+        "mensal": 5.17,
+        "anual": 83,105
+    },
+    "custo_efetivo" : {
+        "mensal": 5.17,
+        "anual": 83,105
+    }
+}

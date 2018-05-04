@@ -9,6 +9,6 @@
 import Foundation
 import Utils
 
-protocol BalanceRepository {
+public protocol BalanceRepository {
     func getBalance(completion: (Result<Balance>) -> ())
 }

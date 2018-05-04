@@ -41,6 +41,10 @@
 		7CEEA11D209CA0A100765D2B /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA11C209CA0A100765D2B /* DataSource.swift */; };
 		7CEEA11F209CA27700765D2B /* JsonDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA11E209CA27700765D2B /* JsonDataSource.swift */; };
 		7CEEA124209CCBCE00765D2B /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CEEA121209CB27500765D2B /* test.json */; };
+		7CEEA127209CD94B00765D2B /* BalanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA126209CD94B00765D2B /* BalanceRepository.swift */; };
+		7CEEA129209CDB0700765D2B /* balance.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CEEA128209CDB0700765D2B /* balance.json */; };
+		7CEEA12C209CE46D00765D2B /* BalanceRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA12B209CE46D00765D2B /* BalanceRepositoryTests.swift */; };
+		7CEEA12F209CE89A00765D2B /* BalanceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +169,10 @@
 		7CEEA11C209CA0A100765D2B /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		7CEEA11E209CA27700765D2B /* JsonDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDataSource.swift; sourceTree = "<group>"; };
 		7CEEA121209CB27500765D2B /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		7CEEA126209CD94B00765D2B /* BalanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRepository.swift; sourceTree = "<group>"; };
+		7CEEA128209CDB0700765D2B /* balance.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = balance.json; sourceTree = "<group>"; };
+		7CEEA12B209CE46D00765D2B /* BalanceRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRepositoryTests.swift; sourceTree = "<group>"; };
+		7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCodable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,10 +240,10 @@
 				7C5233C6209C7288002D275E /* CleanArchitecturePoc */,
 				7C5233DF209C72A1002D275E /* Domain */,
 				7C5233EC209C72A1002D275E /* DomainTests */,
-				7C52340D209C85C6002D275E /* Utils */,
-				7C52341A209C85C7002D275E /* UtilsTests */,
 				7CEEA0F3209C973900765D2B /* Persistency */,
 				7CEEA100209C973A00765D2B /* PersistencyTests */,
+				7C52340D209C85C6002D275E /* Utils */,
+				7C52341A209C85C7002D275E /* UtilsTests */,
 				7C5233C5209C7288002D275E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -349,6 +357,7 @@
 		7CEEA0F3209C973900765D2B /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
+				7CEEA12D209CE88100765D2B /* Models */,
 				7CEEA113209C97C700765D2B /* DataSource */,
 				7CEEA10F209C974700765D2B /* Repositories */,
 				7CEEA0F4209C973900765D2B /* Persistency.h */,
@@ -360,6 +369,7 @@
 		7CEEA100209C973A00765D2B /* PersistencyTests */ = {
 			isa = PBXGroup;
 			children = (
+				7CEEA12A209CE45500765D2B /* Repository */,
 				7CEEA11B209CA03100765D2B /* DataSource */,
 				7CEEA103209C973A00765D2B /* Info.plist */,
 			);
@@ -369,6 +379,7 @@
 		7CEEA10F209C974700765D2B /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				7CEEA126209CD94B00765D2B /* BalanceRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -411,8 +422,25 @@
 			isa = PBXGroup;
 			children = (
 				7CEEA121209CB27500765D2B /* test.json */,
+				7CEEA128209CDB0700765D2B /* balance.json */,
 			);
 			path = Jsons;
+			sourceTree = "<group>";
+		};
+		7CEEA12A209CE45500765D2B /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7CEEA12B209CE46D00765D2B /* BalanceRepositoryTests.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		7CEEA12D209CE88100765D2B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -652,6 +680,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEEA129209CDB0700765D2B /* balance.json in Resources */,
 				7C5233D2209C7288002D275E /* LaunchScreen.storyboard in Resources */,
 				7C5233CF209C7288002D275E /* Assets.xcassets in Resources */,
 				7CEEA124209CCBCE00765D2B /* test.json in Resources */,
@@ -758,7 +787,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEEA127209CD94B00765D2B /* BalanceRepository.swift in Sources */,
 				7CEEA11F209CA27700765D2B /* JsonDataSource.swift in Sources */,
+				7CEEA12F209CE89A00765D2B /* BalanceCodable.swift in Sources */,
 				7CEEA11D209CA0A100765D2B /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -767,6 +798,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEEA12C209CE46D00765D2B /* BalanceRepositoryTests.swift in Sources */,
 				7CEEA102209C973A00765D2B /* JsonDataSourceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
