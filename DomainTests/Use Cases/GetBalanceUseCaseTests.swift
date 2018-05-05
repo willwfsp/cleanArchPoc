@@ -16,7 +16,7 @@ class GetBalanceUseCaseTests: XCTestCase {
         let sut = GetBalanceUseCase(repository: BalanceRepositorySuccessMock())
         
         var result: Result<Balance>!
-        let balance = Balance(id: "teste")
+        let balance = Balance(id: "teste", value: nil, lis: nil, currency: nil)
         let expectation = self.expectation(description: "expecting result callback")
         
         // When
