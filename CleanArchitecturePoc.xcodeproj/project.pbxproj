@@ -44,7 +44,9 @@
 		7CEEA127209CD94B00765D2B /* BalanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA126209CD94B00765D2B /* BalanceRepository.swift */; };
 		7CEEA129209CDB0700765D2B /* balance.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CEEA128209CDB0700765D2B /* balance.json */; };
 		7CEEA12C209CE46D00765D2B /* BalanceRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA12B209CE46D00765D2B /* BalanceRepositoryTests.swift */; };
-		7CEEA12F209CE89A00765D2B /* BalanceCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */; };
+		7CEEA12F209CE89A00765D2B /* BalanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA12E209CE89A00765D2B /* BalanceEntity.swift */; };
+		7DF67654209E24E100F612A5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF67653209E24E100F612A5 /* Currency.swift */; };
+		7DF67658209E27F900F612A5 /* BalanceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF67657209E27F900F612A5 /* BalanceMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,7 +174,9 @@
 		7CEEA126209CD94B00765D2B /* BalanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRepository.swift; sourceTree = "<group>"; };
 		7CEEA128209CDB0700765D2B /* balance.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = balance.json; sourceTree = "<group>"; };
 		7CEEA12B209CE46D00765D2B /* BalanceRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceRepositoryTests.swift; sourceTree = "<group>"; };
-		7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCodable.swift; sourceTree = "<group>"; };
+		7CEEA12E209CE89A00765D2B /* BalanceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceEntity.swift; sourceTree = "<group>"; };
+		7DF67653209E24E100F612A5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		7DF67657209E27F900F612A5 /* BalanceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				7C52342E209C8ECE002D275E /* Balance.swift */,
+				7DF67653209E24E100F612A5 /* Currency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -357,6 +362,7 @@
 		7CEEA0F3209C973900765D2B /* Persistency */ = {
 			isa = PBXGroup;
 			children = (
+				7DF67655209E27B400F612A5 /* Entity Mappers */,
 				7CEEA12D209CE88100765D2B /* Models */,
 				7CEEA113209C97C700765D2B /* DataSource */,
 				7CEEA10F209C974700765D2B /* Repositories */,
@@ -438,9 +444,17 @@
 		7CEEA12D209CE88100765D2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7CEEA12E209CE89A00765D2B /* BalanceCodable.swift */,
+				7CEEA12E209CE89A00765D2B /* BalanceEntity.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		7DF67655209E27B400F612A5 /* Entity Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				7DF67657209E27F900F612A5 /* BalanceMapper.swift */,
+			);
+			path = "Entity Mappers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -747,6 +761,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CEEA112209C977100765D2B /* BalanceRepository.swift in Sources */,
+				7DF67654209E24E100F612A5 /* Currency.swift in Sources */,
 				7C523401209C733E002D275E /* GetBalanceUseCase.swift in Sources */,
 				7C52342F209C8ECE002D275E /* Balance.swift in Sources */,
 				7C52342C209C8E99002D275E /* UseCase.swift in Sources */,
@@ -789,7 +804,8 @@
 			files = (
 				7CEEA127209CD94B00765D2B /* BalanceRepository.swift in Sources */,
 				7CEEA11F209CA27700765D2B /* JsonDataSource.swift in Sources */,
-				7CEEA12F209CE89A00765D2B /* BalanceCodable.swift in Sources */,
+				7DF67658209E27F900F612A5 /* BalanceMapper.swift in Sources */,
+				7CEEA12F209CE89A00765D2B /* BalanceEntity.swift in Sources */,
 				7CEEA11D209CA0A100765D2B /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

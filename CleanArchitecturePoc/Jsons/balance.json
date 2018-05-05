@@ -4,6 +4,7 @@
     "lis" : 5120.0,
     "dias_utilizados" : 5,
     "ultima_atualizacao" : 1525458141000,
+    "moeda": "BLR",
     "data_vencimento" : 1525976541000,
     "juros" : {
         "juros_acumulado": 0.11,

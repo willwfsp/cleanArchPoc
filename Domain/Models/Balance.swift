@@ -10,9 +10,17 @@ import Foundation
 import Utils
 
 public struct Balance {
-    public let id: String?
+    public let id: String
     public let value: Double?
     public let lis: Double?
+    public let currency: Currency?
+    
+    public init(id: String, value: Double?, lis: Double?, currency: Currency?) {
+        self.id = id
+        self.value = value
+        self.lis = lis
+        self.currency = currency
+    }
 }
 
 extension Balance: Equatable {

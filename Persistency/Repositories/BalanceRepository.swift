@@ -1,3 +1,4 @@
+
 //
 //  BalanceRepository.swift
 //  Persistency
@@ -11,6 +12,7 @@ import Domain
 import Utils
 
 class BalanceRepository: Domain.BalanceRepository {
+    
     let dataSource: DataSource
     
     init(dataSource: DataSource) {
@@ -18,15 +20,20 @@ class BalanceRepository: Domain.BalanceRepository {
     }
     
     func getBalance(completion: (Result<Balance>) -> ()) {
-        dataSource.get(id: "balance") { jsonResult in
+        dataSource.get(id: "balance") {
+            do {
+                switch $0 {
+                case let .success(data: json):
+                    let entity = try BalanceEntity(from: json)
+                    let balance = try entity.makeBalance()
+                    completion(.success(data:balance))
+                case let .failure(error: error):
+                    throw error
+                }
+            } catch {
+                completion(.failure(error: error))
+            }
             
         }
-    }
-    
-    func balance(from json: JsonObject) throws -> Balance {
-        let decoder = JSONDecoder()
-        
-        let data = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
-        return try decoder.decode(Balance.self, from: data)
     }
 }

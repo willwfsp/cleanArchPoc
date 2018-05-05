@@ -9,3 +9,7 @@
 import Foundation
 public typealias JsonObject = [String : Any?]
 public typealias JsonArray = [JsonObject]
+
+public protocol ConvertibleFromJson {
+    init(from json: JsonObject?) throws
+}

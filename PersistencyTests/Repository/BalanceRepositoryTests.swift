@@ -13,33 +13,45 @@ import Domain
 @testable import Persistency
 
 class BalanceRepositoryTests: XCTestCase {
-    func testShouldParseBalanceFromJsonObject() {
+    func test_getBalance_shouldReturnParsedBalanceWhenSuccess() {
         // Given
-        let sut = BalanceRepository(dataSource: BalanceJsonStubDataSource())
-        let json = [
-            "id" : "teste",
+        let json: JsonObject = [
+            "autenticacao" : "teste",
             "saldo" : 1230.0,
-            "lis": 5120.0
+            "lis": 5120.0,
+            "moeda": "BRL"
         ]
         
+        let sut = BalanceRepository(dataSource: JsonStubDataSource(json: json))
+        var optionalBalance: Balance? = nil
+        let expectation = self.expectation(description: "expecting to get a parsed balance")
         // When
-        let balance = sut.balance(from: json)
+        sut.getBalance {
+            optionalBalance = $0.data
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
         
         // Then
-        XCTAssertEqual(balance?.id, "teste")
-        XCTAssertEqual(balance?.value, 1230.0)
-        XCTAssertEqual(balance?.lis, 1230.0)
+        XCTAssertNotNil(optionalBalance)
+        
+        guard let balance = optionalBalance else { return }
+        
+        XCTAssertEqual(balance.id, "teste")
+        XCTAssertEqual(balance.value, 1230.0)
+        XCTAssertEqual(balance.lis, 5120.0)
+        XCTAssertEqual(balance.currency, Currency.BRL)
     }
 }
 
-class BalanceJsonStubDataSource: DataSource {
+class JsonStubDataSource: DataSource {
+    let json: JsonObject
+    
+    init(json: JsonObject) {
+        self.json = json
+    }
     func get(id: String, completion: (Result<JsonObject>) -> ()) {
-        let json = [
-            "id" : "teste",
-            "saldo" : 1230.0,
-            "lis": 5120.0
-        ]
-        
         completion(.success(data: json))
     }
 }
