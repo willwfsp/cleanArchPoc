@@ -42,7 +42,7 @@ class LocalJsonDataSourceTests: XCTestCase {
         var json: JsonObject? = nil
         // When
         sut.get(id: "formatted") {
-            error = $0.data
+            json = $0.data
             expectation.fulfill()
         }
         
