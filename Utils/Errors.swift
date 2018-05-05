@@ -16,9 +16,20 @@ public enum FileError: Error {
     case notFound
 }
 
-public enum JsonError: Error {
+public enum JsonError: Error, Equatable {
     case isNotASingleObject
     case malformed
+    case missingField(String)
+    
+    public static func ==(lhs: JsonError, rhs: JsonError) -> Bool {
+        switch (lhs, rhs) {
+        case (.isNotASingleObject, .isNotASingleObject),
+             (.malformed, .malformed): return true
+        case let (.missingField(l), .missingField(r)): return l == r
+        default: return false
+        }
+    }
+    
 }
 
 public enum ResultError: Error {

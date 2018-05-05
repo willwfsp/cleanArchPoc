@@ -8,10 +8,12 @@
 
 import Foundation
 import Domain
+import Utils
 
 extension BalanceEntity {
     func makeBalance() throws -> Balance {
-        guard let id = authentication else { throw NSError() }
+        guard let id = authentication
+            else { throw JsonError.missingField("autenticacao") }
         
         let currency = Currency(rawValue: self.currency ?? "")
         return Balance(id: id, value: balance, lis: lis, currency: currency)

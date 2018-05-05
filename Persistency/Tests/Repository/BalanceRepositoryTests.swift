@@ -43,6 +43,38 @@ class BalanceRepositoryTests: XCTestCase {
         XCTAssertEqual(balance.lis, 5120.0)
         XCTAssertEqual(balance.currency, Currency.BRL)
     }
+    
+    func test_getBalance_shouldReturnMissingIdFieldError() {
+        // Given
+        let json: JsonObject = [
+            "saldo" : 1230.0,
+            "lis": 5120.0,
+            "moeda": "BRL"
+        ]
+        
+        let sut = BalanceRepository(dataSource: JsonStubDataSource(json: json))
+        var expectedError: JsonError? = nil
+        let expectation = self.expectation(description: "expecting to get a missing field error")
+        // When
+        sut.getBalance {
+            expectedError = $0.error as? JsonError
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        // Then
+        XCTAssertNotNil(expectedError)
+        
+        guard let error = expectedError else { return }
+        
+        guard case let .missingField(field) = error else {
+            XCTFail()
+            return
+        }
+        
+        XCTAssertEqual(field, "autenticacao")
+    }
 }
 
 class JsonStubDataSource: DataSource {
