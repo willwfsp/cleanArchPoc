@@ -18,4 +18,10 @@ public enum FileError: Error {
 
 public enum JsonError: Error {
     case isNotASingleObject
+    case malformed
+}
+
+public enum ResultError: Error {
+    case json(JsonError)
+    case file(FileError)
 }

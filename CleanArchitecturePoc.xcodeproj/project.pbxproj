@@ -48,6 +48,7 @@
 		7D815E72209E3AFD002E80CC /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D815E71209E3AFD002E80CC /* FileProvider.swift */; };
 		7D815E73209E401F002E80CC /* JsonProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA101209C973A00765D2B /* JsonProviderTests.swift */; };
 		7D815E76209E45FB002E80CC /* LocalJsonDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D815E74209E45F2002E80CC /* LocalJsonDataSourceTests.swift */; };
+		7D815E78209E4B66002E80CC /* malformed.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D815E77209E4B66002E80CC /* malformed.json */; };
 		7DF67654209E24E100F612A5 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF67653209E24E100F612A5 /* Currency.swift */; };
 		7DF67658209E27F900F612A5 /* BalanceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF67657209E27F900F612A5 /* BalanceMapper.swift */; };
 /* End PBXBuildFile section */
@@ -180,6 +181,7 @@
 		7D815E6F209E3AEB002E80CC /* JsonProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonProvider.swift; sourceTree = "<group>"; };
 		7D815E71209E3AFD002E80CC /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
 		7D815E74209E45F2002E80CC /* LocalJsonDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalJsonDataSourceTests.swift; sourceTree = "<group>"; };
+		7D815E77209E4B66002E80CC /* malformed.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = malformed.json; sourceTree = "<group>"; };
 		7DF67653209E24E100F612A5 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		7DF67657209E27F900F612A5 /* BalanceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -436,6 +438,7 @@
 			children = (
 				7CEEA121209CB27500765D2B /* formatted.json */,
 				7CEEA128209CDB0700765D2B /* balance.json */,
+				7D815E77209E4B66002E80CC /* malformed.json */,
 			);
 			path = Jsons;
 			sourceTree = "<group>";
@@ -701,6 +704,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D815E78209E4B66002E80CC /* malformed.json in Resources */,
 				7CEEA129209CDB0700765D2B /* balance.json in Resources */,
 				7C5233D2209C7288002D275E /* LaunchScreen.storyboard in Resources */,
 				7C5233CF209C7288002D275E /* Assets.xcassets in Resources */,

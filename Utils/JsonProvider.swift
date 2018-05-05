@@ -14,10 +14,14 @@ public struct JsonProvider {
         
         let path = try FileProvider.init().path(of: fileName, type: FileProvider.Extension.json)
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
         
-        guard let jsonObject = jsonResult as? JsonObject else { throw JsonError.isNotASingleObject }
-        
-        return jsonObject
+        do {
+            let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+            guard let jsonObject = jsonResult as? JsonObject else { throw JsonError.isNotASingleObject }
+            
+            return jsonObject
+        } catch {
+            throw JsonError.malformed
+        }
     }
 }

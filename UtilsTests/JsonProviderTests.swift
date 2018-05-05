@@ -44,6 +44,17 @@ class JsonProviderTests: XCTestCase {
             XCTAssertEqual($0 as? FileError, FileError.notFound)
         }
     }
+    
+    func testShouldThrowErrorWhenJsonFileHasMalformedJson() {
+        // Given
+        let sut = JsonProvider()
+        
+        // When
+        XCTAssertThrowsError(try sut.jsonObjectFromLocalFile(named: "malformed")) {
+            // Then
+            XCTAssertEqual($0 as? JsonError, JsonError.malformed)
+        }
+    }
 }
 
 
