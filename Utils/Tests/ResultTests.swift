@@ -13,26 +13,48 @@ class ResultTests: XCTestCase {
 
     func testSuccessShouldPassAnyDataThroughCase() {
         // Given
-        let sut = "Given String"
-        let result = Result<String>.success(data: sut)
+        let data = "Given String"
+        let sut = Result<String>.success(data: data)
         
         // When
-        let disclosuredData = result.data!
+        let disclosuredData = sut.data!
         
         // Then
-        XCTAssertEqual(sut, disclosuredData)
+        XCTAssertEqual(data, disclosuredData)
     }
     
     func testFailureShouldPassAnyErrorThroughCase() {
         // Given
-        let sut = ResultErrorSpy.somethingWrong
-        let result = Result<String>.failure(error: sut)
+        let error = ResultErrorSpy.somethingWrong
+        let sut = Result<String>.failure(error: error)
         
         // When
-        let disclosuredError = result.error as! ResultErrorSpy
+        let disclosuredError = sut.error as! ResultErrorSpy
         
         // Then
-        XCTAssertEqual(sut, disclosuredError)
+        XCTAssertEqual(error, disclosuredError)
+    }
+    
+    func testShouldReturnNilDataWhenTheResultIsFailure() {
+        // Given
+        let sut = Result<String>.failure(error: NSError())
+        
+        // When
+        let data = sut.data
+        
+        // Then
+        XCTAssertNil(data)
+    }
+    
+    func testShouldReturnNilErrorWhenTheResultIsSuccess() {
+        // Given
+        let sut = Result<String>.success(data: "")
+        
+        // When
+        let error = sut.error
+        
+        // Then
+        XCTAssertNil(error)
     }
 }
 

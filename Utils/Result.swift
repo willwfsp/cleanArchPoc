@@ -12,13 +12,6 @@ public enum Result<T> {
     case success(data: T)
     case failure(error: Error)
     
-    public var isSuccess: Bool {
-        if case .success = self {
-            return true
-        }
-        return false
-    }
-    
     public var data: T? {
         if case let .success(data) = self {
             return data
