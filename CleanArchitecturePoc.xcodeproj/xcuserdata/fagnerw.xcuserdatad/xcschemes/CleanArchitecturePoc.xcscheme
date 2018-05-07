@@ -33,29 +33,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C5233E5209C72A1002D275E"
-               BuildableName = "DomainTests.xctest"
-               BlueprintName = "DomainTests"
-               ReferencedContainer = "container:CleanArchitecturePoc.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C523413209C85C6002D275E"
-               BuildableName = "UtilsTests.xctest"
-               BlueprintName = "UtilsTests"
-               ReferencedContainer = "container:CleanArchitecturePoc.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7CEEA0F9209C973A00765D2B"
-               BuildableName = "PersistencyTests.xctest"
-               BlueprintName = "PersistencyTests"
+               BlueprintIdentifier = "7C8EBD9520A06EA7003DFE37"
+               BuildableName = "PresentationTests.xctest"
+               BlueprintName = "PresentationTests"
                ReferencedContainer = "container:CleanArchitecturePoc.xcodeproj">
             </BuildableReference>
          </TestableReference>

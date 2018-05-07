@@ -9,15 +9,15 @@
 import Foundation
 import Utils
 
-class GetBalanceUseCase: UseCase {
-    typealias T = Balance
+public class GetBalanceUseCase: UseCase {
+    public typealias T = Balance
     let repository: BalanceRepository
     
-    init(repository: BalanceRepository) {
+    public init(repository: BalanceRepository) {
         self.repository = repository
     }
     
-    func execute(completion: (Result<Balance>) -> ()) {
+    public func execute(completion: (Result<Balance>) -> ()) {
         repository.getBalance { completion($0) }
     }
 }

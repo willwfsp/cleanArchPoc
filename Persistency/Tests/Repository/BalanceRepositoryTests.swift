@@ -13,7 +13,7 @@ import Domain
 @testable import Persistency
 
 class BalanceRepositoryTests: XCTestCase {
-    func test_getBalance_shouldReturnParsedBalanceWhenSuccess() {
+    func testGetBalanceShouldReturnParsedBalanceWhenSuccess() {
         // Given
         let json: JsonObject = [
             "autenticacao" : "teste",
@@ -44,7 +44,7 @@ class BalanceRepositoryTests: XCTestCase {
         XCTAssertEqual(balance.currency, Currency.BRL)
     }
     
-    func test_getBalance_shouldReturnMissingIdFieldError() {
+    func testGetBalanceShouldReturnMissingIdFieldError() {
         // Given
         let json: JsonObject = [
             "saldo" : 1230.0,
@@ -55,6 +55,7 @@ class BalanceRepositoryTests: XCTestCase {
         let sut = BalanceRepository(dataSource: JsonStubDataSource(json: json))
         var expectedError: JsonError? = nil
         let expectation = self.expectation(description: "expecting to get a missing field error")
+        
         // When
         sut.getBalance {
             expectedError = $0.error as? JsonError
@@ -76,7 +77,7 @@ class BalanceRepositoryTests: XCTestCase {
         XCTAssertEqual(field, "autenticacao")
     }
     
-    func test_getBalance_shouldReturnMalformedJsonError() {
+    func testGetBalanceShouldReturnMalformedJsonError() {
         // Given
         let json: JsonObject = [:]
         
