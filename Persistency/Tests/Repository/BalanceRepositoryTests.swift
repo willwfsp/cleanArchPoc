@@ -41,7 +41,7 @@ class BalanceRepositoryTests: XCTestCase {
         XCTAssertEqual(balance.id, "teste")
         XCTAssertEqual(balance.value, 1230.0)
         XCTAssertEqual(balance.lis, 5120.0)
-        XCTAssertEqual(balance.currency, Currency.BRL)
+        XCTAssertEqual(balance.currency, CurrencyLocal.BRL)
     }
     
     func testGetBalanceShouldReturnMissingIdFieldError() {

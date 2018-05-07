@@ -21,7 +21,8 @@ struct Home {
         }
         
         struct ViewModel {
-            
+            let value: String
+            let lis: String
         }
     }
 }

@@ -15,7 +15,7 @@ extension BalanceEntity {
         guard let id = authentication
             else { throw JsonError.missingField("autenticacao") }
         
-        let currency = Currency(rawValue: self.currency ?? "")
+        let currency = CurrencyLocal(rawValue: self.currency ?? "")
         return Balance(id: id, value: balance, lis: lis, currency: currency)
     }
 }

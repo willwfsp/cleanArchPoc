@@ -34,17 +34,17 @@ class HomePresenterTests: XCTestCase {
 }
 
 extension HomePresenterTests {
-    class HomeViewControllerSpy: HomeViewController {
+    class HomeViewControllerSpy: HomeDisplayLogic {
         var balanceViewModel: Home.GetBalance.ViewModel? = nil
         let expectation: XCTestExpectation
-        
+
         init(expectation: XCTestExpectation) {
-            self.init()
             self.expectation = expectation
         }
         
-        override func displayBalance(viewModel: Home.GetBalance.ViewModel) {
+        func displayBalance(viewModel: Home.GetBalance.ViewModel) {
             balanceViewModel = viewModel
         }
+    
     }
 }

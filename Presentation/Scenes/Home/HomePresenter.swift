@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Domain
 
 protocol HomePresentationLogic {
     func presentBalance(response: Home.GetBalance.Response)
@@ -20,6 +21,11 @@ class HomePresenter: HomePresentationLogic {
     }
     
     func presentBalance(response: Home.GetBalance.Response) {
-        
+        switch response.result {
+        case let .success(balance):
+            break
+        default:
+            break
+        }
     }
 }

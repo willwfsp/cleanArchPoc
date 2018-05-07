@@ -13,9 +13,9 @@ public struct Balance {
     public let id: String
     public let value: Double?
     public let lis: Double?
-    public let currency: Currency?
+    public let currency: CurrencyLocal?
     
-    public init(id: String, value: Double?, lis: Double?, currency: Currency?) {
+    public init(id: String, value: Double?, lis: Double?, currency: CurrencyLocal?) {
         self.id = id
         self.value = value
         self.lis = lis
