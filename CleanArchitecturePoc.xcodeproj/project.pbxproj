@@ -39,6 +39,12 @@
 		7C8EBDBC20A0AB5D003DFE37 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EBDBB20A0AB5D003DFE37 /* Double.swift */; };
 		7C8EBDBE20A0AC24003DFE37 /* CurrencyLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF67653209E24E100F612A5 /* CurrencyLocal.swift */; };
 		7C8EBDC020A0AC63003DFE37 /* CurrencyLocaleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EBDBF20A0AC63003DFE37 /* CurrencyLocaleTests.swift */; };
+		7C8EBDC220A0D20C003DFE37 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EBDC120A0D20C003DFE37 /* HomeViewController.xib */; };
+		7C8EBDC420A0D245003DFE37 /* BalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EBDC320A0D245003DFE37 /* BalanceView.xib */; };
+		7C8EBDC620A0D4F3003DFE37 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EBDC520A0D4F3003DFE37 /* BalanceView.swift */; };
+		7C8EBDC820A0D699003DFE37 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EBDC720A0D699003DFE37 /* BalanceViewModel.swift */; };
+		7C8EBDCB20A0D9B5003DFE37 /* BalanceViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8EBDCA20A0D9B5003DFE37 /* BalanceViewTests.swift */; };
+		7C8EBDCC20A0DC7A003DFE37 /* BalanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C8EBDC320A0D245003DFE37 /* BalanceView.xib */; };
 		7CEEA0EC209C954300765D2B /* JsonObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEEA0EB209C954300765D2B /* JsonObject.swift */; };
 		7CEEA0FB209C973A00765D2B /* Persistency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEEA0F2209C973900765D2B /* Persistency.framework */; };
 		7CEEA107209C973A00765D2B /* Persistency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEEA0F2209C973900765D2B /* Persistency.framework */; };
@@ -199,6 +205,11 @@
 		7C8EBDB820A09409003DFE37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7C8EBDBB20A0AB5D003DFE37 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		7C8EBDBF20A0AC63003DFE37 /* CurrencyLocaleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyLocaleTests.swift; sourceTree = "<group>"; };
+		7C8EBDC120A0D20C003DFE37 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		7C8EBDC320A0D245003DFE37 /* BalanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BalanceView.xib; sourceTree = "<group>"; };
+		7C8EBDC520A0D4F3003DFE37 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		7C8EBDC720A0D699003DFE37 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		7C8EBDCA20A0D9B5003DFE37 /* BalanceViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewTests.swift; sourceTree = "<group>"; };
 		7CEEA0EB209C954300765D2B /* JsonObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonObject.swift; sourceTree = "<group>"; };
 		7CEEA0F2209C973900765D2B /* Persistency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEEA0FA209C973A00765D2B /* PersistencyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PersistencyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -447,6 +458,7 @@
 		7C8EBD9C20A06EA7003DFE37 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EBDC920A0D986003DFE37 /* Widget */,
 				7C8EBDB020A0707C003DFE37 /* Scenes */,
 				7C8EBD9F20A06EA7003DFE37 /* Info.plist */,
 			);
@@ -464,6 +476,9 @@
 		7C8EBDAC20A07033003DFE37 /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				7C8EBDC320A0D245003DFE37 /* BalanceView.xib */,
+				7C8EBDC520A0D4F3003DFE37 /* BalanceView.swift */,
+				7C8EBDC720A0D699003DFE37 /* BalanceViewModel.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -475,6 +490,7 @@
 				7C8EBDB220A071D1003DFE37 /* HomePresenter.swift */,
 				7C8EBDB420A07318003DFE37 /* HomeModels.swift */,
 				7C8EBDB820A09409003DFE37 /* HomeViewController.swift */,
+				7C8EBDC120A0D20C003DFE37 /* HomeViewController.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -494,6 +510,14 @@
 				7C8EBDB620A091F7003DFE37 /* HomePresenterTests.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		7C8EBDC920A0D986003DFE37 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				7C8EBDCA20A0D9B5003DFE37 /* BalanceViewTests.swift */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		7CEEA0F3209C973900765D2B /* Persistency */ = {
@@ -888,6 +912,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D815E78209E4B66002E80CC /* malformed.json in Resources */,
+				7C8EBDCC20A0DC7A003DFE37 /* BalanceView.xib in Resources */,
 				7CEEA129209CDB0700765D2B /* balance.json in Resources */,
 				7C5233D2209C7288002D275E /* LaunchScreen.storyboard in Resources */,
 				7D5D0152209FDCA300C875DD /* array.json in Resources */,
@@ -929,6 +954,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8EBDC220A0D20C003DFE37 /* HomeViewController.xib in Resources */,
+				7C8EBDC420A0D245003DFE37 /* BalanceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1017,6 +1044,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C8EBDB920A09409003DFE37 /* HomeViewController.swift in Sources */,
+				7C8EBDC820A0D699003DFE37 /* BalanceViewModel.swift in Sources */,
+				7C8EBDC620A0D4F3003DFE37 /* BalanceView.swift in Sources */,
 				7C8EBDAF20A07058003DFE37 /* HomeInteractor.swift in Sources */,
 				7C8EBDB520A07318003DFE37 /* HomeModels.swift in Sources */,
 				7C8EBDB320A071D1003DFE37 /* HomePresenter.swift in Sources */,
@@ -1027,6 +1056,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C8EBDCB20A0D9B5003DFE37 /* BalanceViewTests.swift in Sources */,
 				7C8EBD9E20A06EA7003DFE37 /* HomeInteractorTests.swift in Sources */,
 				7C8EBDBA20A0958C003DFE37 /* HomePresenterTests.swift in Sources */,
 			);

@@ -9,7 +9,8 @@
 import UIKit
 
 protocol HomeDisplayLogic {
-    func displayBalance(viewModel: Home.GetBalance.ViewModel)
+    func displayBalance(viewModel: Home.GetBalance.ViewModel.Success)
+    func displayBalanceError(viewModel: Home.GetBalance.ViewModel.Failure)
 }
 
 class HomeViewController: UIViewController {
@@ -17,7 +18,11 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: HomeDisplayLogic {
-    func displayBalance(viewModel: Home.GetBalance.ViewModel) {
+    func displayBalance(viewModel: Home.GetBalance.ViewModel.Success) {
+        
+    }
+    
+    func displayBalanceError(viewModel: Home.GetBalance.ViewModel.Failure) {
         
     }
 }

@@ -58,8 +58,9 @@ extension HomeInteractorTests {
         var getBalanceResponse: Home.GetBalance.Response? = nil
         
         class HomeDisplayLogicSpy: HomeDisplayLogic {
+            func displayBalance(viewModel: Home.GetBalance.ViewModel.Success) { }
+            func displayBalanceError(viewModel: Home.GetBalance.ViewModel.Failure) { }
             init() { }
-            func displayBalance(viewModel: Home.GetBalance.ViewModel) { }
         }
         
         init(expectation: XCTestExpectation) {

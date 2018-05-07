@@ -21,8 +21,13 @@ struct Home {
         }
         
         struct ViewModel {
-            let value: String
-            let lis: String
+            struct Success {
+                let balance: BalanceViewModel
+            }
+            
+            struct Failure {
+                let errorMessage: String
+            }
         }
     }
 }

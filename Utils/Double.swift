@@ -8,12 +8,12 @@
 
 import Foundation
 
-extension Double {
-    var currencyString: String? {
+public extension Double {
+    public var currencyString: String? {
         return currencyString(currencyLocal: .BRL)
     }
     
-    func currencyString(currencyLocal: CurrencyLocal) -> String? {
+    public func currencyString(currencyLocal: CurrencyLocal) -> String? {
         let formatter = NumberFormatter()
         formatter.locale = currencyLocal.locale
         formatter.numberStyle = .currency
