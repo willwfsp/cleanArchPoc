@@ -17,13 +17,13 @@ public enum FileError: Error {
 }
 
 public enum JsonError: Error, Equatable {
-    case isNotASingleObject
+    case isNotJsonObject
     case malformed
     case missingField(String)
     
     public static func ==(lhs: JsonError, rhs: JsonError) -> Bool {
         switch (lhs, rhs) {
-        case (.isNotASingleObject, .isNotASingleObject),
+        case (.isNotJsonObject, .isNotJsonObject),
              (.malformed, .malformed): return true
         case let (.missingField(l), .missingField(r)): return l == r
         default: return false

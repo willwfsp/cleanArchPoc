@@ -75,6 +75,29 @@ class BalanceRepositoryTests: XCTestCase {
         
         XCTAssertEqual(field, "autenticacao")
     }
+    
+    func test_getBalance_shouldReturnMalformedJsonError() {
+        // Given
+        let json: JsonObject = [:]
+        
+        let sut = BalanceRepository(dataSource: JsonStubDataSource(json: json))
+        var expectedError: JsonError? = nil
+        let expectation = self.expectation(description: "expecting to get a missing field error")
+        // When
+        sut.getBalance {
+            expectedError = $0.error as? JsonError
+            expectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 1, handler: nil)
+        
+        // Then
+        XCTAssertNotNil(expectedError)
+        
+        guard let error = expectedError else { return }
+        
+        XCTAssertEqual(error, .malformed)
+    }
 }
 
 class JsonStubDataSource: DataSource {
@@ -84,6 +107,10 @@ class JsonStubDataSource: DataSource {
         self.json = json
     }
     func get(id: String, completion: (Result<JsonObject>) -> ()) {
-        completion(.success(data: json))
+        guard json.isEmpty else {
+            completion(.success(data: json))
+            return
+        }
+        completion(.failure(error: JsonError.malformed))
     }
 }

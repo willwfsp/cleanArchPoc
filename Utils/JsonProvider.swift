@@ -17,7 +17,7 @@ public struct JsonProvider {
         
         do {
             let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-            guard let jsonObject = jsonResult as? JsonObject else { throw JsonError.isNotASingleObject }
+            guard let jsonObject = jsonResult as? JsonObject else { throw JsonError.isNotJsonObject }
             
             return jsonObject
         } catch {
